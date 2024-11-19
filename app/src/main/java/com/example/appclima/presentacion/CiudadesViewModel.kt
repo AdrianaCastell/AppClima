@@ -9,6 +9,7 @@ import com.example.appclima.presentacion.CiudadesIntencion
 import com.example.appclima.repository.Repositorio
 import com.example.appclima.repository.modelos.Ciudad
 import com.example.appclima.router.Router
+import com.example.appclima.router.Ruta
 import kotlinx.coroutines.launch
 
 class CiudadesViewModel(
@@ -27,7 +28,12 @@ class CiudadesViewModel(
     }
 
     private fun seleccionar(ciudad: Ciudad) {
-
+        val ruta = Ruta.Clima(
+            lat = ciudad.lat,
+            lon = ciudad.lon,
+            nombre = ciudad.name
+        )
+        router.navegar(ruta)
     }
 
     private fun buscar( nombre: String){
@@ -46,8 +52,6 @@ class CiudadesViewModel(
             }
         }
     }
-
-    
 }
 
 

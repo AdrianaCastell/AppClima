@@ -40,7 +40,6 @@ fun CiudadesView(
 
     Scaffold(
         topBar = {
-            // Aquí agregamos el TopAppBar
             TopAppBar(
                 title = {
                     Text("Ciudades")
